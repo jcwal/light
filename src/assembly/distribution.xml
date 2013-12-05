@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+	<id>distribution</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<!-- adds readme and other textfiles to the root of the distribution archive -->
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>readme.txt</include>
+				<include>license.txt</include>
+				<include>changelog.txt</include>
+				<include>notice.txt</include>
+			</includes>
+			<outputDirectory />
+			<lineEnding>dos</lineEnding>
+		</fileSet>
+		<fileSet>
+			<!-- adds javadoc html to the distribution archive under the 'docs/javadoc' directory
+				 see pom.xml 'maven-javadoc-plugin' declaration -->
+			<directory>target/site/apidocs</directory>
+			<outputDirectory>docs/javadoc</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<!-- adds reference manual (html and pdf) to the distribution archive under the
+				 'docs/reference' directory
+				 see pom.xml 'maven-javadoc-plugin' declaration -->
+			<directory>light-docs/target/docbook/publish</directory>
+			<outputDirectory>docs/reference</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<moduleSets>
+		<moduleSet>
+			<!-- adds module jars to the distribution archive under the 'dist' directory -->
+			<includes>
+				<!-- 
+				<include>org.jcwal.light:light-api</include>
+				<include>org.jcwal.light:light-core</include>
+				<include>org.jcwal.light:light-utils</include>
+				-->
+			</includes>
+			<binaries>
+				<outputDirectory>dist</outputDirectory>
+				<includeDependencies>false</includeDependencies>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+		<moduleSet>
+			<!-- adds module source jars to the distribution archive under the 'src' directory
+				 see pom.xml 'maven-source-plugin' declaration -->
+			<includes>
+				<!-- 
+				<include>org.jcwal.light:light-api</include>
+				<include>org.jcwal.light:light-core</include>
+				<include>org.jcwal.light:light-utils</include>
+				 -->			
+			</includes>
+			<binaries>
+				<attachmentClassifier>sources</attachmentClassifier>
+				<outputDirectory>sources</outputDirectory>
+				<includeDependencies>false</includeDependencies>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+	</moduleSets>
+</assembly>
