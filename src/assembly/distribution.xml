@@ -28,7 +28,7 @@
 			<!-- adds reference manual (html and pdf) to the distribution archive under the
 				 'docs/reference' directory
 				 see pom.xml 'maven-javadoc-plugin' declaration -->
-			<directory>light-docs/target/docbook/publish</directory>
+			<directory>light-docs/target/docbkx</directory>
 			<outputDirectory>docs/reference</outputDirectory>
 		</fileSet>
 	</fileSets>
@@ -36,11 +36,9 @@
 		<moduleSet>
 			<!-- adds module jars to the distribution archive under the 'dist' directory -->
 			<includes>
-				<!-- 
 				<include>org.jcwal.light:light-api</include>
-				<include>org.jcwal.light:light-core</include>
-				<include>org.jcwal.light:light-utils</include>
-				-->
+				<!-- <include>org.jcwal.light:light-core</include> -->
+				<!-- <include>org.jcwal.light:light-utils</include> -->
 			</includes>
 			<binaries>
 				<outputDirectory>dist</outputDirectory>
@@ -52,11 +50,9 @@
 			<!-- adds module source jars to the distribution archive under the 'src' directory
 				 see pom.xml 'maven-source-plugin' declaration -->
 			<includes>
-				<!-- 
 				<include>org.jcwal.light:light-api</include>
-				<include>org.jcwal.light:light-core</include>
-				<include>org.jcwal.light:light-utils</include>
-				 -->			
+				<!-- <include>org.jcwal.light:light-core</include> -->
+				<!-- <include>org.jcwal.light:light-utils</include> -->
 			</includes>
 			<binaries>
 				<attachmentClassifier>sources</attachmentClassifier>

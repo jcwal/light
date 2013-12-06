@@ -2,17 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jcwal</groupId>
+	<groupId>org.jcwal.light</groupId>
 	<artifactId>light-dist</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>JCWAL Light Framework Distribution</name>
 
-	<scm>
-		<connection>scm:git:git@github.com:jcwal/light.git</connection>
-		<url>scm:git:git@github.com:jcwal/light.git</url>
-		<developerConnection>scm:git:git@github.com:jcwal/light.git</developerConnection>
-	</scm>
+	<modules>
+		<module>light-parent</module>
+		<module>light-api</module>
+		<module>light-ext</module>
+		<module>light-docs</module>
+	</modules>
 
 	<developers>
 		<developer>
@@ -51,7 +52,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdkLevel>1.6</jdkLevel>
+		<jdkLevel>1.7</jdkLevel>
 		<jvmargs>-XX:MaxPermSize=384m -Xms512m -Xmx1024m</jvmargs>
 
 		<dist.id>light-dist</dist.id>
@@ -264,6 +265,17 @@
 		<finalName>${dist.finalName}</finalName>
 	</build>
 
+	<scm>
+		<connection>scm:git:git@github.com:jcwal/light.git</connection>
+		<url>scm:git:git@github.com:jcwal/light.git</url>
+		<developerConnection>scm:git:git@github.com:jcwal/light.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/jcwal/light/issues</url>
+	</issueManagement>
+
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -274,8 +286,4 @@
 			<url>http://jcwal.github.com/maven-repository/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-	<modules>
-		<module>light-parent</module>
-		<module>light-api</module>
-	</modules>
 </project>
