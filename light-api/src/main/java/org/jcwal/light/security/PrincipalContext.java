@@ -22,4 +22,6 @@ public interface PrincipalContext {
 
 	UserPrincipal getPrincipal();
 
+	PrincipalAttribute getRuntimeAttribute(String attribute);
+
 }

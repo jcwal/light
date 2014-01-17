@@ -16,12 +16,19 @@
 package org.jcwal.light.security;
 
 import java.security.Principal;
-import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * @author jokeway
  */
 public interface UserPrincipal extends Principal {
 
-	List<PrincipalAttribute> getAttributes();
+	String getUid();
+
+	Locale getLocale();
+
+	boolean isAuthorized(Object resource);
+
+	Set<PrincipalAttribute> getAttributes();
 }

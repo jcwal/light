@@ -15,6 +15,7 @@
  */
 package org.jcwal.light.security;
 
+
 /**
  * @author jokeway
  */
@@ -22,5 +23,5 @@ public interface PrincipalAttribute {
 
 	String getAttribute();
 
-	String getValue();
+	Object getValue();
 }

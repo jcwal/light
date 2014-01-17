@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jcwal.light.security;
-
-import java.util.List;
+package org.jcwal.light.security.credential;
 
 /**
  * @author jokeway
  */
-public interface PrincipalContextFactory {
+public interface Credential {
 
-	PrincipalContext createContext(Object principal);
-
-	List<AttributeResolver> getOrderedAttributeResolvers();
 }

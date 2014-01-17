@@ -15,14 +15,15 @@
  */
 package org.jcwal.light.security;
 
-import java.util.List;
-
 /**
  * @author jokeway
  */
-public interface PrincipalContextFactory {
+public interface UserPrincipalStore {
 
-	PrincipalContext createContext(Object principal);
+	UserPrincipal load(String uid);
 
-	List<AttributeResolver> getOrderedAttributeResolvers();
+	void store(UserPrincipal userPrincipal);
+
+	void destory(String uid);
+
 }

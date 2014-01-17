@@ -15,14 +15,16 @@
  */
 package org.jcwal.light.security;
 
-import java.util.List;
-
 /**
+ * 
  * @author jokeway
  */
-public interface PrincipalContextFactory {
+public interface AttributeResolver {
 
-	PrincipalContext createContext(Object principal);
+	int getOrder();
 
-	List<AttributeResolver> getOrderedAttributeResolvers();
+	boolean support(String attribute);
+
+	PrincipalAttribute resolve(String attribute);
+
 }
